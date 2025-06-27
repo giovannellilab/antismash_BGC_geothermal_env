@@ -1,0 +1,68 @@
+Product,Category,Type,Description
+2dos,other,Strict,2-deoxy-streptamine aminoglycoside
+acyl_amino_acids,other,Strict,N-acyl amino acid
+amglyccycl,other,Strict,Aminoglycoside/aminocyclitol
+aminopolycarboxylic-acid,other,Strict,Aminopolycarboxylic acid metallophores (doi:10.1039/C8MT00009C)
+archaeal-RiPP,RiPP,Strict,Archaeal RiPPs (doi:10.1021/jacs.2c00521 supplemental)
+arylpolyene,PKS,Strict,Aryl polyene
+betalactone,other,Strict,Beta-lactone containing protease inhibitor
+butyrolactone,other,Strict,Butyrolactone
+CDPS,NRPS,Strict,tRNA-dependent cyclodipeptide synthases
+crocagin,RiPP,Strict,Crocagin-like
+cyanobactin,RiPP,Strict,Cyanobactins like patellamide (AY986476)
+cyclic-lactone-autoinducer,RiPP,Strict,agrD-like cyclic lactone autoinducer peptides (AF001782)
+darobactin,RiPP,Strict,Darobactin-like compounds
+ectoine,other,Strict,Ectoine
+furan,other,Strict,Furan
+hglE-KS,PKS,Strict,Heterocyst glycolipid synthase-like PKS
+HR-T2PKS,PKS,Strict,Highly reducing type II PKS like ishigamide and skyllamycin
+hserlactone,other,Strict,Homoserine lactone
+hydrogen-cyanide,other,Strict,"Hydrogen cyanide (AF208523, doi:10.1128/jb.182.24.6940-6949.20)"
+indole,other,Strict,Indole
+isocyanide,other,Strict,Isocyanides (doi:10.1093/nar/gkad573)
+ladderane,PKS,Strict,Ladderane
+lassopeptide,RiPP,Strict,Lasso peptide
+linaridin,RiPP,Strict,Linear arid peptide such as cypemycin (HQ148718) and salinipeptin (MG788286)
+melanin,other,Strict,Melanin
+methanobactin,RiPP,Strict,Copper-chelating/transporting peptides (doi:10.1126/science.aap9437)
+microviridin,RiPP,Strict,Microviridin
+NAGGN,other,Strict,N-acetylglutaminylglutamine amide
+NAPAA,NRPS,Strict,Non-alpha poly-amino acids like e-Polylysin
+NI-siderophore,other,Strict,"NRPS-independent, IucA/IucC-like siderophores (siderophore prior to 7.0)"
+NRPS,NRPS,Strict,Non-ribosomal peptide synthetase
+NRP-metallophore,NRPS,Strict,Non-ribosomal peptide metallophores
+nucleoside,other,Strict,Nucleoside
+oligosaccharide,saccharide,Strict,Oligosaccharide
+opine-like-metallophore,other,Strict,Opine-like zincophores like staphylopine (doi:10.1128/mSystems.00554-20)
+other,other,Strict,Cluster containing a secondary metabolite-related protein that does not fit into any other category
+PBDE,other,Strict,Polybrominated diphenyl ether
+phenazine,other,Strict,Phenazine
+phosphoglycolipid,other,Strict,Phosphoglycolipid
+phosphonate,other,Strict,Phosphonate
+PpyS-KS,PKS,Strict,PPY-like pyrone
+proteusin,RiPP,Strict,Proteusin
+PUFA,PKS,Strict,Polyunsaturated fatty acid
+ranthipeptide,RiPP,Strict,Cys-rich peptides (aka. SCIFF: six Cys in fourty-five) like in CP001581:3481278-3502939
+redox-cofactor,RiPP,Strict,Redox-cofactors such as PQQ (NC_021985:1458906-1494876)
+resorcinol,other,Strict,Resorcinol
+sactipeptide,RiPP,Strict,Sactipeptide
+spliceotide,RiPP,Strict,RiPPs containing plpX type spliceases (NZ_KB235920:17899-42115)
+T1PKS,PKS,Strict,Type I PKS (Polyketide synthase)
+T2PKS,PKS,Strict,Type II PKS
+T3PKS,PKS,Strict,Type III PKS
+terpene,terpene,Strict,Terpene
+thioamitides,RiPP,Strict,Thioamitide RiPPs as found in JOBF01000011
+thioamide-NRP,NRPS,Strict,Thioamide-containing non-ribosomal peptide
+transAT-PKS,PKS,Strict,Trans-AT PKS
+triceptide,RiPP,Strict,Triceptides
+tropodithietic-acid,other,Strict,Tropodithietic acid
+fungal-RiPP-like,RiPP,Relaxed,Fungal RiPP-likes
+NRPS-like,NRPS,Relaxed,NRPS-like fragment
+phosphonate-like,other,Relaxed,Phosphonate-like (prior to 7.0 this was the phosphonate rule)
+PKS-like,PKS,Relaxed,Other types of PKS
+RiPP-like,RiPP,Relaxed,Other unspecified ribosomally synthesised and post-translationally modified peptide product (RiPP)
+RRE-containing,RiPP,Relaxed,RRE-element containing cluster
+transAT-PKS-like,PKS,Relaxed,"Trans-AT PKS fragment, with trans-AT domain not found"
+LAP,RiPP,Obsolete,Linear azol(in)e-containing peptides
+mycosporine-like,NRPS,Obsolete,Molecules containing mycosporine-like amino acid
+thiopeptide,RiPP,Obsolete,Thiopeptide
