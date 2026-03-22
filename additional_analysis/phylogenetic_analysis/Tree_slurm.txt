@@ -1,0 +1,63 @@
+#!/bin/bash
+
+#SBATCH --job-name=iq_tree
+#SBATCH --array=1
+#SBATCH --time=167:00:00
+#SBATCH --cpus-per-task=32
+#SBATCH --mem=128G
+#SBATCH --partition=parallel
+#SBATCH --output=/ibiscostorage/..
+#SBATCH --error=/ibiscostorage/..
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=a..
+
+set -euo pipefail
+
+cd /ibiscostorage/GiovannelliLab/user/asilva/iqTree
+
+# Read the Nth line based on SLURM_ARRAY_TASK_ID
+FAA_FILE="$(sed -n "${SLURM_ARRAY_TASK_ID}p" input_faa_list.txt)"
+
+# activate environment
+eval "$(mamba shell hook --shell bash)"
+mamba activate iq_tree_env
+
+# Safety checks
+if [[ -z "${FAA_FILE}" ]]; then
+  echo "ERROR: No input found on line ${SLURM_ARRAY_TASK_ID} of input_faa_list.txt"
+  exit 1
+fi
+
+if [[ ! -f "${FAA_FILE}" ]]; then
+  echo "ERROR: Input file not found: ${FAA_FILE}"
+  exit 1
+fi
+
+BASENAME="$(basename "${FAA_FILE}")"
+TAG="${BASENAME%.*}"
+
+# 1) MAFFT (exactly as you described)
+mafft --auto "${FAA_FILE}" > "${TAG}.aln.faa"
+
+# 2) ClipKIT
+clipkit "${TAG}.aln.faa" -o "${TAG}.aln.trim.faa"
+
+# 3) Fix duplicate headers
+awk '
+/^>/{
+  h=$0
+  seen[h]++
+  if(seen[h]>1) print h "_dup" seen[h]
+  else print h
+  next
+}
+{print}
+' "${TAG}.aln.trim.faa" > "${TAG}.aln.trim.uniq.faa"
+
+# 4) IQ-TREE (COMMENTED ON PURPOSE)
+iqtree \
+   -s "${TAG}.aln.trim.uniq.faa" \
+   -m LG+G4+F \
+   -bb 1000 \
+   -alrt 1000 \
+   -nt "${SLURM_CPUS_PER_TASK}"

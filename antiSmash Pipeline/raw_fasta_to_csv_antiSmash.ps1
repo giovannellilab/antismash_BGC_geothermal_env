@@ -64,8 +64,57 @@ Write-Output "-------------------------------- antiSMASH done for all FASTA file
 Write-Output "Total number of FASTA files found: $faFileCount"
 
 # Python script to create plots and csv files with relevant information
-# From json files
-Write-Output "-------------------------------- Step 2. Python script initialised ------------------------------------"
-python.exe ./json_to_csv.py
+# $targetDirectory = "C:\Users\a..."
+$subdirectories = Get-ChildItem -Path $targetDirectory -Directory
 
-Write-Output "-------------------------------- Python script done ----------------------------------------------"
+# Loop through each subdirectory
+foreach ($subDir in $subdirectories) {
+
+    # Get all .gbk files in the current subdirectory
+    $nodeGbkFiles = Get-ChildItem -Path $subDir.FullName -Recurse -Filter "*.gbk"
+
+    # Check if any files were found in the current subdirectory
+    if ($nodeGbkFiles.Count -eq 0) {
+        Write-Output "No .gbk files starting with 'NODE' were found in $($subDir.FullName)."
+    } else {
+        Write-Output "Found NODE files in directory: $($subDir.FullName)"
+
+        # Create the 'Nodes' folder inside the subdirectory if it doesn't already exist
+        $nodesFolder = Join-Path -Path $subDir.FullName -ChildPath "Nodes"
+        if (-Not (Test-Path -Path $nodesFolder)) {
+            New-Item -ItemType Directory -Path $nodesFolder
+            Write-Output "Created folder: $nodesFolder"
+        }
+
+        # Move each NODE .gbk file into the 'Nodes' folder
+        foreach ($file in $nodeGbkFiles) {
+            $destinationPath = Join-Path -Path $nodesFolder -ChildPath $file.Name
+            Move-Item -Path $file.FullName -Destination $destinationPath -Force
+        }
+
+
+        # After processing, run Docker command inside each Nodes folder
+        Write-Output "Running Docker command in the Nodes folder: $nodesFolder"
+
+        # Define variables for the input and output directories for Docker
+        $inputDir = $nodesFolder  # Use the Nodes folder as input
+        $outputDir = Join-Path -Path $nodesFolder -ChildPath "Trees"  # Output will be in a folder inside Nodes
+
+        # Create the output directory if it doesn't exist
+        if (-Not (Test-Path -Path $outputDir)) {
+            New-Item -ItemType Directory -Path $outputDir
+        }
+
+        # Construct the Docker command
+        $dockerCommand = "docker run --rm " +
+                         "--volume `"" + $inputDir + ":/home/input`" " +
+                         "--volume `"" + $outputDir + ":/home/output`" " +
+                         "currocam/big-scape:v1.1.5 " +
+                         "--input /home/input --output /home/output --cutoffs 0.3 --include_singletons"
+
+        # Execute the Docker command
+        Invoke-Expression $dockerCommand
+
+    }
+}
+Write-Output "-------------------------------- BiG-SCAPE done ------------------------------------"
