@@ -8,13 +8,16 @@ This project explores the tectonic fingerprint on microbial secondary metabolite
 1. **antiSMASH Pipeline folder**:  
    Contains the `raw_fasta_to_csv_antiSmash.ps1` script that recursively processes FASTA (.fa) files, runs antiSMASH via Docker for BGC detection, organises outputs into structured directories, and post-processes results by grouping `.gbk` files and running BiG-SCAPE for clustering and network analysis.
 
-2. **Figures folder**:  
+   - **SQL_for_Bigscape folder**:  
+     Contains SQL scripts used to query the BiG-SCAPE SQLite database, generating sample-by-GCF presence/absence matrices and retrieving GCF product annotations. These outputs serve as the core input datasets for downstream analyses.
+
+3. **Figures folder**:  
    Contains all the individual figures used in manuscript.
 
-3. **Notebook folder**:  
+4. **Notebook folder**:  
    Contains the code to reproduce the analysis and figures in the manuscript, along with other exploratory plots. The folder also holds the core datasets used to build the phyloseq object for microbial community analysis: env_data_BGC (environmental metadata per sample), OTU_BGC (GCF OTU table), tax_BGC (taxonomy assignments for BiG-SCAPE GCFs), and the phyloseq object creation allowed for the analysis of BGC potential across the sampled regions.
 
-4. **additional-analyses folder**:  
+5. **additional-analyses folder**:  
    Contains the subfolders for:  
    - **network_analysis**: with Cytoscape and network files for the four main BGC classes (TERPENE, PKS, RiPP, and NRPS), together with Python scripts for novelty analysis, MIBiG distance summarisation, conversion of network outputs for Gephi visualisation, and generation of cluster-level box plots
    - **CAT**: with files related to CAT-based taxonomic classification   
