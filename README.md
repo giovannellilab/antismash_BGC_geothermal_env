@@ -10,6 +10,8 @@
 [![project-coevolve](https://img.shields.io/badge/Project-ERC%20CoEvolve-000fa9.svg)](https://www.coevolve.eu/)
 [![made-with-python-r](https://img.shields.io/badge/Coded%20in-Python%20%7C%20R-blue.svg)](https://www.python.org/)
 
+[![DOI](https://zenodo.org/badge/1009498193.svg)](https://doi.org/10.5281/zenodo.15785034)
+
 
 This project explores the tectonic fingerprint on microbial secondary metabolite potential in geothermal environments along the South and Central American Volcanic Zone, Iceland and Italy. This repo contains the code behind the Docker Antismash pipeline used for automatising antismash looping through assembly FASTA files, along with the subsequent analysis and R code for figure generation. All the sequences analyzed in this study are available through ENA under the Umbrella Project CoEvolve PRJEB55081.
 
