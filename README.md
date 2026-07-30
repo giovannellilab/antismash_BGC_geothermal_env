@@ -1,5 +1,4 @@
-# Code associated with the manuscript  
-**"Microbial biosynthetic potential across global geothermal systems"**
+# Microbial biosynthetic potential across global geothermal systems
 
 [![forthebadge](https://forthebadge.com/images/badges/cc-by.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com)
