@@ -1,6 +1,17 @@
 # Code associated with the manuscript  
 **"Microbial biosynthetic potential across global geothermal systems"**
 
+[![forthebadge](https://forthebadge.com/images/badges/cc-by.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/built-with-science.svg)](https://forthebadge.com)
+
+[![giovannellilab](https://img.shields.io/badge/BY-Giovannelli_Lab-blue)](https://www.donatogiovannelli.com)
+[![funded-by-erc](https://img.shields.io/badge/Funded%20by-ERC-ff6400.svg)](https://erc.europa.eu/homepage)
+[![funded-by-mcsa](https://img.shields.io/badge/Funded%20by-MCSA-CC1253.svg)](https://marie-sklodowska-curie-actions.ec.europa.eu/)
+[![project-coevolve](https://img.shields.io/badge/Project-ERC%20CoEvolve-000fa9.svg)](https://www.coevolve.eu/)
+[![made-with-python-r](https://img.shields.io/badge/Coded%20in-Python%20%7C%20R-blue.svg)](https://www.python.org/)
+
+
 This project explores the tectonic fingerprint on microbial secondary metabolite potential in geothermal environments along the South and Central American Volcanic Zone, Iceland and Italy. This repo contains the code behind the Docker Antismash pipeline used for automatising antismash looping through assembly FASTA files, along with the subsequent analysis and R code for figure generation. All the sequences analyzed in this study are available through ENA under the Umbrella Project CoEvolve PRJEB55081.
 
 ## This repo consists of:
